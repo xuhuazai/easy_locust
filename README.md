@@ -47,13 +47,24 @@ docker安装好后，将代码拉到本地，执行`git clone https://github.com
         host = '10.95.147.103:8080'
     
 #### 运行locust
-easy_locust支持三种模式运行，分别为：`standalone`[单机运行模式-简单性能测试时使用，只用一台压力机即可]、`master`[master模式-该模式不产生实际压力，所以需要启动最少一台salve]、`slave`[slave模式-salve可以与master放在一台机器上，也可以分布式部署，配置`MASTER_HOST`即可]。
+easy_locust支持三种模式运行，分别为：
 
-了解这三种模式后，你要根据实际的情况来选择。如果实际场景为`master`或`standalone`时，直接运行对应的`locust-$mode.sh`脚本即可，但是为`slave`模式时需要进行一些配置
+
+`standalone`[单机运行模式-简单性能测试时使用，只用一台压力机即可]
+
+
+`master`[master模式-该模式不产生实际压力，所以需要启动最少一台salve]
+
+
+`slave`[slave模式-salve可以与master放在一台机器上，也可以分布式部署，配置`MASTER_HOST`即可]。
+
+
+
+了解这三种模式后，你要根据实际的情况来选择，如果实际场景为`master`或`standalone`时，直接运行对应的`locust-$mode.sh`脚本即可，但是为`slave`模式时需要进行一些配置
     
-	vi locust-slave.sh
+    vi locust-slave.sh
 	
-	#设置起多少个slave，建议根据CPU核数设置。该参数支持命令行传入，默认为1
+    #设置起多少个slave，建议根据CPU核数设置。该参数支持命令行传入，默认为1
     SLAVE_COUNT=8
     
     #配置MASTER-注意：由于每个slave都是一个独立的docker运行，所以这里千万不能配置127.0.0.1
