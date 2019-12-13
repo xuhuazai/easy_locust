@@ -1,3 +1,5 @@
+#!/bin/bash
+
 LOCUST_CMD="/usr/local/bin/locust"
 LOCUST_OPTS="-f $SCENARIO_FILE"
 LOCUST_MODE=${LOCUST_MODE:-standalone}
