@@ -19,6 +19,7 @@ docker安装好后，将代码拉到本地，执行`git clone https://github.com
 └── run.sh `该文件会拷贝到easy_locust镜像里，负责调用locust可执行程序`
 ### 配置Locust
 #### 编写locust脚本
+    locustfile\locustfile.py
     from locust import TaskSet, task, between
     from locust.contrib.fasthttp import FastHttpLocust
     
