@@ -7,16 +7,16 @@
 ### 拉取代码
 docker安装好后，将代码拉到本地，执行`git clone https://github.com/xuhuazai/easy_locust.git`
 ### 目录结构说明
-├── build-docker-image.sh `构建docker镜像的脚本`
-├── Dockerfile
-├── LICENSE
-├── locustfile
-│   └── locustfile.py `locust性能测试文件，在此文件里编写你想要测试的接口`
-├── locust-master.sh  `当前服务器为locust master模式时，执行该脚本`
-├── locust-slave.sh   `当前服务器为locust slave模式时，执行该脚本，在该脚本中配置启动几个slave`
-├── locust-standalone.sh  `当前服务器为locust standalone模式时，执行该脚本`
-├── README.md
-└── run.sh `该文件会拷贝到easy_locust镜像里，负责调用locust可执行程序`
+    ├── build-docker-image.sh `构建docker镜像的脚本`
+    ├── Dockerfile
+    ├── LICENSE
+    ├── locustfile
+    │   └── locustfile.py `locust性能测试脚本，在此脚本里编写你想要测试的接口`
+    ├── locust-master.sh  `当前服务器为locust master模式时，执行该脚本`
+    ├── locust-slave.sh   `当前服务器为locust slave模式时，执行该脚本，在该脚本中配置master、启动几个slave`
+    ├── locust-standalone.sh  `当前服务器为locust standalone模式时，执行该脚本`
+    ├── README.md
+    └── run.sh `该文件会拷贝到easy_locust镜像里，负责调用locust可执行程序`
 ### 配置Locust
 #### 编写locust脚本
     vi locustfile\locustfile.py
