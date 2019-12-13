@@ -3,11 +3,9 @@
 WORKDIR=$(cd "$(dirname "$0")";pwd)
 CONTAINER_NAME="easy_locust_slave"
 
-RemoveContainer() {
- 	docker stop $1 && docker rm $1
-}
 
-RemoveContainer $(docker ps -a | awk '/easy_locust_slave/ {print $1}')
+docker stop $(docker ps -a | awk '/easy_locust_slave/ {print $1}')
+docker rm  $(docker ps -a | awk '/easy_locust_slave/ {print $1}')
 
 #设置起多少个slave，建议根据CPU核数设置
 SLAVE_COUNT=8
@@ -23,7 +21,7 @@ do
 	    -e MASTER_HOST=$MASTER_HOST \
 	    -e SCENARIO_FILE=/software/locust/locustfile/locustfile.py \
 	    --name $CONTAINER_NAME"_"$i \
-	    easy_locust:v1
+	    easy_locust:v1 &
 done
 
 

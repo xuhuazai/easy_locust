@@ -3,11 +3,8 @@
 WORKDIR=$(cd "$(dirname "$0")";pwd)
 CONTAINER_NAME="easy_locust"
 
-RemoveContainer() {
- 	docker stop $1 && docker rm $1
-}
-
-RemoveContainer $CONTAINER_NAME
+docker stop $CONTAINER_NAME
+docker rm $CONTAINER_NAME
 
 docker run \
     -v $WORKDIR/locustfile:/software/locust/locustfile \
