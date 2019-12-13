@@ -58,3 +58,6 @@ easy_locust支持三种模式运行，分别为：`standalone`[单机运行模�
     
     #配置MASTER
     MASTER_HOST="10.95.147.122"
+
+
+感谢你的使用，如果有任何问题，可以在线提交Issues！
