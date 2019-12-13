@@ -50,13 +50,13 @@ docker安装好后，将代码拉到本地，执行`git clone https://github.com
 easy_locust支持三种模式运行，分别为：
 
 
-`standalone`[单机运行模式-简单性能测试时使用，只用一台压力机即可]
+> `standalone`[单机运行模式-简单性能测试时使用，只用一台压力机即可]
 
 
-`master`[master模式-该模式不产生实际压力，所以需要启动最少一台salve]
+> `master`[master模式-该模式不产生实际压力，所以需要启动最少一台salve]
 
 
-`slave`[slave模式-salve可以与master放在一台机器上，也可以分布式部署，配置`MASTER_HOST`即可]。
+> `slave`[slave模式-salve可以与master放在一台机器上，也可以分布式部署，配置`MASTER_HOST`即可]。
 
 
 
