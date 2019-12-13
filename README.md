@@ -19,7 +19,8 @@ docker安装好后，将代码拉到本地，执行`git clone https://github.com
 └── run.sh `该文件会拷贝到easy_locust镜像里，负责调用locust可执行程序`
 ### 配置Locust
 #### 编写locust脚本
-    locustfile\locustfile.py
+    vi locustfile\locustfile.py
+    
     from locust import TaskSet, task, between
     from locust.contrib.fasthttp import FastHttpLocust
     
@@ -51,6 +52,7 @@ easy_locust支持三种模式运行，分别为：`standalone`[单机运行模�
 了解这三种模式后，你要根据实际的情况来选择。如果实际场景为`master`或`standalone`时，直接运行对应的`locust-$mode.sh`脚本即可，但是为`slave`模式时需要进行一些配置
     
 	vi locust-slave.sh
+	
 	#配置起多少个slave，建议根据CPU核数设置
     SLAVE_COUNT=8
     
