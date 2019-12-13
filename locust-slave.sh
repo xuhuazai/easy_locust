@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WORKDIR=$(dirname $0)
+WORKDIR=$(cd "$(dirname "$0")";pwd)
 CONTAINER_NAME="easy_locust_slave"
 
 function RemoveContainer {
