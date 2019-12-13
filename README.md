@@ -46,6 +46,9 @@ docker安装好后，将代码拉到本地，执行`git clone https://github.com
         wait_time = between(5, 15)
         host = '10.95.147.103:8080'
     
+
+#### 构建镜像
+执行`./build-docker-image.sh`等待镜像构建完成
 #### 运行locust
 easy_locust支持三种模式运行，分别为：
 
