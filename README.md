@@ -49,7 +49,7 @@ docker安装好后，将代码拉到本地，执行`git clone https://github.com
 
 #### 构建镜像
 执行`./build-docker-image.sh`等待镜像构建完成
-#### 运行locust
+#### 运行模式选择
 easy_locust支持三种模式运行，分别为：
 
 
@@ -68,6 +68,19 @@ easy_locust支持三种模式运行，分别为：
     
     #配置MASTER-注意：由于每个slave都是一个独立的docker运行，所以这里千万不能配置127.0.0.1
     MASTER_HOST="10.95.147.122"
+#### 运行easy_locust
+    ./locust-standalone.sh
+    Error response from daemon: No such container: easy_locust
+    Error: No such container: easy_locust
+    => Starting locust
+    /usr/local/bin/locust -f /software/locust/locustfile/locustfile.py
+    [2019-12-13 16:25:10,595] f5ee36bc24fb/INFO/locust.main: Starting web monitor at *:8089
+    [2019-12-13 16:25:10,595] f5ee36bc24fb/INFO/locust.main: Starting Locust 0.13.2
 
+> 此时easy_locust已经运行起来，访问 http://ip:8089 可开始压力测试
+
+#### 运行效果
+![配置并发数](https://ftp.bmp.ovh/imgs/2019/12/daa2461ca44ab484.png "配置并发数")
+![压力测试效果](https://ftp.bmp.ovh/imgs/2019/12/b8f1cca3e5b48033.png "压力测试效果")
 
 感谢你的使用，如果有任何问题，可以在线提交Issues！
