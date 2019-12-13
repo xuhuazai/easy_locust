@@ -80,7 +80,8 @@ easy_locust支持三种模式运行，分别为：
 > 此时easy_locust已经运行起来，访问 http://ip:8089 可开始压力测试
 
 #### 运行效果
-![配置并发数](https://ftp.bmp.ovh/imgs/2019/12/daa2461ca44ab484.png "配置并发数")
-![压力测试效果](https://ftp.bmp.ovh/imgs/2019/12/b8f1cca3e5b48033.png "压力测试效果")
+![配置并发数](https://i.loli.net/2019/12/14/3ACaDhuvR51kgZH.png)
+
+![压测详情](https://i.loli.net/2019/12/14/nDlNGO2r3aFR79L.png)
 
 感谢你的使用，如果有任何问题，可以在线提交Issues！
