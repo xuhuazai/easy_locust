@@ -1,0 +1,2 @@
+# easy_locust
+基于docker非常容易部署使用的locust分布式版本，使用geventhttpclient库，压力机性能至少提升一倍！
