@@ -7,7 +7,7 @@ function RemoveContainer {
 	docker stop $1 && docker rm $1
 }
 
-RemoveContainer ${docker ps -a | awk '/{$CONTAINER_NAME}/ {print $1}'}
+RemoveContainer $(docker ps -a | awk '/{$CONTAINER_NAME}/ {print $1}')
 
 #设置起多少个slave，建议根据CPU核数设置
 SLAVE_COUNT=8
