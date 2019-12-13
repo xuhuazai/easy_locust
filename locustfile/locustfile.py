@@ -21,4 +21,4 @@ class WebsiteTasks(TaskSet):
 class WebsiteUser(FastHttpLocust):
     task_set = WebsiteTasks
     wait_time = between(5, 15)
-    host = '10.95.147.103:8080'
+    host = 'http://10.95.147.103:8080'
