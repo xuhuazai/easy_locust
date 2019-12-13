@@ -13,9 +13,7 @@ RemoveContainer $(docker ps -a | awk '/{$CONTAINER_NAME}/ {print $1}')
 SLAVE_COUNT=8
 
 #配置MASTER
-MASTER_HOST="10.95.147.122"
-#配置测试的目标URL
-TARGET_URL="http://10.95.147.103:8080"
+MASTER_HOST="127.0.0.1"
 
 for((i=1;i<=$SLAVE_COUNT;i++))
 do
@@ -24,7 +22,6 @@ do
     -e LOCUST_MODE=slave \
     -e MASTER_HOST=$MASTER_HOST \
     -e SCENARIO_FILE=/software/locust/locustfile/locustfile.py \
-    -e TARGET_URL=$TARGET_URL \
     --name $CONTAINER_NAME \
     easy_locust:v1
 done
