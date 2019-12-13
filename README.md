@@ -69,19 +69,26 @@ easy_locust支持三种模式运行，分别为：
     #配置MASTER-注意：由于每个slave都是一个独立的docker运行，所以这里千万不能配置127.0.0.1
     MASTER_HOST="10.95.147.122"
 #### 运行easy_locust
-    ./locust-standalone.sh
-    Error response from daemon: No such container: easy_locust
-    Error: No such container: easy_locust
+    我们打开两个终端，第一个启动master
+    ./locust-master.sh
     => Starting locust
-    /usr/local/bin/locust -f /software/locust/locustfile/locustfile.py
-    [2019-12-13 16:25:10,595] f5ee36bc24fb/INFO/locust.main: Starting web monitor at *:8089
-    [2019-12-13 16:25:10,595] f5ee36bc24fb/INFO/locust.main: Starting Locust 0.13.2
+    /usr/local/bin/locust -f /software/locust/locustfile/locustfile.py --master
+    [2019-12-13 17:00:06,957] a61084a0b533/INFO/locust.main: Starting web monitor at *:8089
+    [2019-12-13 17:00:06,958] a61084a0b533/INFO/locust.main: Starting Locust 0.13.2
+    
+    第二个终端启动slave，并指定启动3个slave
+    /locust-slave.sh 3
+
+    此时观察master终端输出
+    [2019-12-13 17:01:10,232] a61084a0b533/INFO/locust.runners: Client 'd3df90de586a_3e8d3bdcaffd4ab495926c796ef39784' reported as ready. Currently 1 clients ready to swarm.
+    [2019-12-13 17:01:10,277] a61084a0b533/INFO/locust.runners: Client '966a513ffac2_29a1d98472ee4ac4a3e916c91bc3f82f' reported as ready. Currently 2 clients ready to swarm.
+    [2019-12-13 17:01:10,438] a61084a0b533/INFO/locust.runners: Client '57e566f9fe42_b900607948984c16bf0a588f8cd2658d' reported as ready. Currently 3 clients ready to swarm.
 
 > 此时easy_locust已经运行起来，访问 http://ip:8089 可开始压力测试
 
 #### 运行效果
-![配置并发数](https://i.loli.net/2019/12/14/3ACaDhuvR51kgZH.png)
+![配置并发数](https://i.loli.net/2019/12/14/YcdUs3Xt2Ju4lTE.png)
 
-![压测详情](https://i.loli.net/2019/12/14/nDlNGO2r3aFR79L.png)
+![压测详情](https://i.loli.net/2019/12/14/PUhngO7d639zSVc.png)
 
 感谢你的使用，如果有任何问题，可以在线提交Issues！
