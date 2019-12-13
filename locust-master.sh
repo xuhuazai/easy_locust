@@ -3,8 +3,8 @@
 WORKDIR=$(cd "$(dirname "$0")";pwd)
 CONTAINER_NAME="easy_locust"
 
-function RemoveContainer {
-	docker stop $1 && docker rm $1
+RemoveContainer() {
+ 	docker stop $1 && docker rm $1
 }
 
 RemoveContainer $CONTAINER_NAME
