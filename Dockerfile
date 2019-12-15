@@ -14,7 +14,8 @@ RUN apt-get update \
 RUN pip3 install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com locustio psutil geventhttpclient-wheels
 
 ADD run.sh /usr/local/bin/run.sh
-RUN chmod 0755 /usr/local/bin/run.sh
+RUN chmod 0755 /usr/local/bin/run.sh \
+    && ulimit -c -m -s -t unlimited
 
 EXPOSE 8089 5557 5558
 
