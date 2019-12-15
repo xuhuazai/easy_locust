@@ -11,7 +11,7 @@ docker rm  $(docker ps -a | awk '/easy_locust_slave/ {print $1}')
 SLAVE_COUNT=${1:-1}
 
 #配置MASTER-注意：由于每个slave都是一个独立的docker运行，所以这里千万不能配置127.0.0.1
-MASTER_HOST="10.95.147.122"
+MASTER_HOST="192.168.0.4"
 
 for((i=1;i<=$SLAVE_COUNT;i++))
 do
