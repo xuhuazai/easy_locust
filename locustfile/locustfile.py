@@ -11,7 +11,6 @@ class WebsiteTasks(TaskSet):
 
     @task
     def lua(self):
-        r = self.client.get('/lua')
         with self.client.get('/lua', catch_response = True) as response:
             if response.status_code == 200:
                 response.success()
