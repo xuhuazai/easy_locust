@@ -34,7 +34,6 @@ docker安装好后，将代码拉到本地，执行`git clone https://github.com
     
         @task
         def lua(self):
-            r = self.client.get('/lua')
             with self.client.get('/lua', catch_response = True) as response:
                 if response.status_code == 200:
                     response.success()
