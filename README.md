@@ -1,5 +1,5 @@
 # easy_locust
-基于docker非常容易部署使用的locust分布式版本，使用geventhttpclient库，压力机性能至少提升一倍，并且解决了官方不支持multipart/form-data的问题，官方不支持issues链接:https://github.com/locustio/locust/issues/1252 https://github.com/gwik/geventhttpclient/issues/120
+基于docker非常容易部署使用的locust分布式版本，使用geventhttpclient库，压力机性能至少提升一倍，并且解决了官方不支持multipart/form-data的问题(https://github.com/locustio/locust/issues/1252 https://github.com/gwik/geventhttpclient/issues/120)
 
 ## 使用说明
 ### 准备工作
