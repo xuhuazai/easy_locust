@@ -17,6 +17,8 @@ for((i=1;i<=$SLAVE_COUNT;i++))
 do
 	docker run \
 	    -v $WORKDIR/locustfile:/software/locust/locustfile \
+	    -v $WORKDIR/fix_geventhttpclient_upload_py/useragent.py:/usr/local/lib/python3.6/dist-packages/geventhttpclient/useragent.py \
+    	-v $WORKDIR/fix_geventhttpclient_upload_py/fasthttp.py:/usr/local/lib/python3.6/dist-packages/locust/contrib/fasthttp.py \
 	    -e LOCUST_MODE=slave \
 	    -e MASTER_HOST=$MASTER_HOST \
 	    -e SCENARIO_FILE=/software/locust/locustfile/locustfile.py \
