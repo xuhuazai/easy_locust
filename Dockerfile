@@ -1,4 +1,4 @@
-FROM ubuntu:18.10
+FROM ubuntu:18.04
 
 LABEL MAINTAINER="Xushaohua xushaohua@159n.com"
 
