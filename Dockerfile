@@ -11,7 +11,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /software/locust
 
-RUN pip3 install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com locust psutil geventhttpclient-wheels
+RUN pip3 install -i http://pypi.douban.com/simple --trusted-host pypi.douban.com locustio==0.14.6 psutil geventhttpclient-wheels==1.3.1.dev2
 
 ADD run.sh /usr/local/bin/run.sh
 RUN chmod 0755 /usr/local/bin/run.sh \
