@@ -1,5 +1,5 @@
 from locust import TaskSet, task, between
-from locust.contrib.fasthttp import FastHttpUser
+from locust.contrib.fasthttp import FastHttpLocust
 
 class WebsiteTasks(TaskSet):
     
@@ -17,7 +17,7 @@ class WebsiteTasks(TaskSet):
             else:
                 response.failure('Failed!')
 
-class WebsiteUser(FastHttpUser):
+class WebsiteUser(FastHttpLocust):
     task_set = WebsiteTasks
     wait_time = between(5, 15)
     host = 'http://10.95.147.103:8080'
