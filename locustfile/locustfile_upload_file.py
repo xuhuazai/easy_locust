@@ -1,5 +1,5 @@
 from locust import TaskSet, task, between
-from locust.contrib.fasthttp import FastHttpLocust
+from locust.contrib.fasthttp import FastHttpUser
 from urllib3 import encode_multipart_formdata
 
 #import requests
@@ -23,7 +23,7 @@ class WebsiteTasks(TaskSet):
             else:	
                 print(response.text)
 
-class WebsiteUser(FastHttpLocust):
+class WebsiteUser(FastHttpUser):
     task_set = WebsiteTasks
     wait_time = between(5, 15)
     host = 'http://10.95.147.115:9502'
