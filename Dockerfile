@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
 LABEL MAINTAINER="Xushaohua xushaohua@159n.com"
 
@@ -11,7 +11,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /software/locust
 
-RUN pip3 install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com locustio psutil geventhttpclient-wheels
+RUN pip3 install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com locust psutil geventhttpclient-wheels
 
 ADD run.sh /usr/local/bin/run.sh
 RUN chmod 0755 /usr/local/bin/run.sh \
